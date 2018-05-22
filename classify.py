@@ -30,12 +30,11 @@ def showRanges(data):
             print("  "+student)
         lower=upper
 
-
-fname = open(sys.argv[1])
-boundaries = list(map(int, sys.argv[2:]))
-
-data = getData(fname)
-showRanges(data)
+if __name__ == "__main__":
+	fname = open(sys.argv[1])
+	boundaries = list(map(int, sys.argv[2:]))
+	data = getData(fname)
+	showRanges(data)
 
 
 
