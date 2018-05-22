@@ -2,20 +2,16 @@
 
 import unittest
 
-import classify
+import classify.py as classify
 
 
 class TestExclude(unittest.TestCase):
 
-    def test_centre1(self):
-        evecs=[[0,0,0],[-1,0,1],[1,0,1],[0,4,0]]
-        c1 = stratify.getCentroid(evecs,1,[0,1])
-        self.assertEqual(c1,0)
+    def test_thoseInRange(self):
+        data=[['A',0],['B',5],['C',12],['D',21]]
+        c1 = classify.thoseInRange(data,0,20)
+        self.assertEqual(c1,[['A',0],['B',5],['C',12]])
 
-    def test_centre2(self):
-        evecs=[[0,0,0],[-1,0,1],[1,0,1],[0,4,0]]
-        c1 = stratify.getCentroid(evecs,0,[0,1])
-        self.assertEqual(c1,0)
 
 if __name__ == '__main__':
 
